@@ -1,0 +1,587 @@
+body {
+    background-color: #6f8a9a;
+}
+
+.container-main {
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+
+    grid-template-rows: 80px 15px 1fr 2fr 0.5fr 1fr 2fr 0.5fr 1fr 2fr;
+
+    gap: 10px;
+}
+
+.header {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 80px;
+    justify-content: center;
+} 
+
+.mainphoto {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 80px;
+    justify-content: center;
+}
+
+.headercrown {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 80px;
+    justify-content: center;
+
+    margin-top: 15px;
+}
+
+.header-two {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 15px;
+    justify-content: center;
+}
+
+.header-two .sub {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 15px;
+    justify-content: center;
+}
+
+.header-two h1 {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 15px;
+    justify-content: center;
+
+    color: black;
+    font-family: "Karla", "Helvetica";
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    text-shadow: 0px 4px 4px #00000040;
+}
+
+.rightnav {
+    grid-column-start: 2;
+    grid-column-end: -1;
+    grid-row: 1;
+    grid-row-end: 2;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 90px;
+    justify-content: flex-end;
+    gap: 15px;
+    padding-right: 20px;
+}
+
+ul {
+    grid-column-start: 2;
+    grid-column-end: -1;
+    grid-row: 1;
+    grid-row-end: 2;
+
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+}
+
+.rightnav ul li{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+
+    list-style: none;
+    font-family: "Karla", "Helvetica";
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+  
+.menu > li {
+    margin: 0 1rem;
+    overflow: hidden;
+}
+  
+.menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  
+#menu-toggle {
+    display: none;
+}
+  
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+  }
+  
+.menu-button::before {
+    content: '';
+    margin-top: -8px;
+}
+  
+.menu-button::after {
+    content: '';
+    margin-top: 8px;
+}
+  
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+}
+  
+#menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+}
+  
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+}
+  
+@media (max-width: 1140px) {
+    .menu-button-container {
+      display: flex;
+    }
+    .menu {
+      position: absolute;
+      top: 0;
+      margin-top: 50px;
+      left: 0;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+    #menu-toggle ~ .menu li {
+      height: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    #menu-toggle:checked ~ .menu li {
+      border: 1px solid #333;
+      height: 2.5em;
+      padding: 0.5em;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .menu > li {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0.5em 0;
+      width: 100%;
+      color: white;
+      background-color: #222;
+    }
+    .menu > li:not(:last-child) {
+      border-bottom: 1px solid #444;
+    }
+}
+
+.subtitle-row-1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 40px;
+    border-bottom: 2px solid black;
+}
+
+.books-asoiaf {
+
+    color: black;
+    font-family: "Julius Sans One", "Helvetica";
+    font-size: 20px;
+    font-weight: 400px;
+}
+
+.targaryen {
+    height: 30px;
+    width: 30px;
+}
+
+
+.book {
+    display: flex;
+    align-items: flex-start;
+
+    padding-left: 40px;
+}
+
+#bookonehide {
+    align-self: center;
+}
+
+.star-book {
+    display: flex;
+    align-items: flex-start;
+
+    padding-left: 40px;
+}
+
+.subtitle-row-2 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 6;
+    grid-row-end: 7;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 40px;
+    border-bottom: 2px solid black;
+}
+
+.gotseries {
+
+    color: black;
+    font-family: "Julius Sans One", "Helvetica";
+    font-size: 20px;
+    font-weight: 400px;
+}
+
+.lannister {
+    height: 30px;
+    width: 30px;
+}
+
+.container-main .flex-row-2 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 7;
+    grid-row-end: 8;
+    padding-left: 40px;
+}
+
+.season {
+    display: flex;
+    align-items: flex-start;
+
+    padding-left: 40px;
+}
+
+#seasononehide {
+    align-self: center;
+}
+
+.container-main .star-rating-tv {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 8;
+    grid-row-end: 9;
+    padding-left: 40px;
+}
+
+.star-tv {
+    display: flex;
+    align-items: flex-start;
+
+    padding-left: 40px;
+}
+
+.subtitle-row-3 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 9;
+    grid-row-end: 10;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+    padding-left: 40px;
+    border-bottom: 2px solid black;
+}
+
+.characters {
+
+    color: black;
+    font-family: "Julius Sans One", "Helvetica";
+    font-size: 20px;
+    font-weight: 400px;
+}
+
+.stark {
+    height: 30px;
+    width: 30px;
+}
+
+.container-main .flex-row-3 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 10;
+    grid-row-end: 11;
+    padding-left: 40px;
+}
+
+.legend {
+    display: flex;
+    align-items: flex-start;
+
+    padding-left: 40px;
+    padding-bottom: 10px;
+}
+
+#legthree {
+    align-self: center;
+}
+
+@media (max-width:992px) {
+    #booktwohide {
+        display: none;
+    }
+}
+
+@media (max-width:992px) {
+    #bookthreehide {
+        display: none;
+    }
+}
+
+@media (max-width:992px) {
+    #staronehide {
+        display: none;
+    }
+}
+
+@media (max-width:992px) {
+    #startwohide {
+        display: none;
+    }
+}
+
+@media (max-width:992px) {
+    #starthreehide {
+        display: none;
+    }
+}
+
+@media (max-width:992) {
+    #seasononehide {
+        display: none;
+    }
+}
+
+@media (max-width:992px) {
+    #seasontwohide {
+        display: none;
+    }
+}
+
+@media (max-width:992px) {
+    #seasonthreehide {
+        display: none;
+    }
+}
+
+@media (max-width:992px) {
+    #starronehide {
+        display: none;
+    }
+}
+
+@media (max-width:992px) {
+    #starrtwohide {
+        display: none;
+    }
+}
+
+@media (max-width:992px) {
+    #starrthreehide {
+        display: none;
+    }
+}
+
+@media (max-width:992px) {
+    #legone {
+        display: none;
+    }
+}
+
+@media (max-width:992px) {
+    #legtwo {
+        display: none;
+    }
+}
+
+@media (max-width:768px) {
+    #mobilebook {
+        display: none;
+    }
+}
+
+@media (max-width:768px) {
+    #mobilestarb {
+        display: none;
+    }
+}
+
+@media (max-width:768px) {
+    #mobiletv {
+        display: none;
+    }
+}
+
+@media (max-width:768px) {
+    #mobilestartv {
+        display: none;
+    }
+}
+
+@media (max-width:768px) {
+    #mobilelegend {
+        display: none;
+    }
+}
+
+@media (max-width:576px) {
+    #bookxshide {
+        display: none;
+    }
+}
+
+@media (max-width:576px) {
+    #starbookxshide {
+        display: none;
+    }
+}
+
+@media (max-width:576px) {
+    #tvxshide {
+        display: none;
+    }
+}
+
+@media (max-width:576px) {
+    #startvxshide {
+        display: none;
+    }
+}
+
+@media (max-width:576px) {
+    #legendxshide {
+        display: none;
+    }
+}
+
+@media (max-width:480px) {
+    #smallestone {
+        height: fit-content;
+        width: fit-content;
+    }
+    
+    #bookonehide {
+       display: none;
+    }
+
+    #staronehide {
+        height: fit-content;
+        width: fit-content;
+    }
+}
+
+@media (max-width:480px) {
+    #smallestthree {
+        height: fit-content;
+        width: fit-content;
+    }
+    
+    #seasononehide {
+       display: none;
+    }
+
+    #starronehide {
+        height: fit-content;
+        width: fit-content;
+    }
+}
+
+@media (max-width:480px) {
+    #smallestfive {
+        height: fit-content;
+        width: fit-content;
+    }
+    
+    #legthree {
+       display: none;
+    }
+}
